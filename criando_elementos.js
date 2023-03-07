@@ -1,1 +1,0 @@
-// Resoluções aqui
