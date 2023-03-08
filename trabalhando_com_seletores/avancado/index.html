@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabalhando com Seletores - Avançado</title>
+  </head>
+  <body>
+    <h1 class="title">Aprendendo DOM</h1>
+    <h3 class="title">Aprendendo DOM</h3>
+
+    <script>
+      const firstElementTitle = window.document.querySelector(".title");
+      console.log(firstElementTitle);
+
+      // ou
+      const listElementsClassTitle =
+        window.document.getElementsByClassName("title");
+      console.log(listElementsClassTitle[0]);
+    </script>
+  </body>
+</html>
