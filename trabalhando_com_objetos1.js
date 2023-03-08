@@ -69,10 +69,11 @@ verifyClasses()
 
 function realPower(){
     if (figure.leader_trend){
-        return figure.power ** 2
-    } else {
-        return figure.power
-    }
+        figure.power **= 2
+    } 
+    
+    return figure.power
+    
 }
 
 realPower()
@@ -90,6 +91,8 @@ function insertNewClass(newClass){
                 figure.classes.push(newClass.toLowerCase())
                 return `Classe ${newClass} inserida com sucesso.`
             }
+        } else {
+            return 'Classe não permitida'
         }
     }
 }
