@@ -172,17 +172,17 @@ console.log(adicionaCarro({
 }));
 
 //Exercício 7 - Removendo um carro da lista de carros da concessionária
-function removeCarro(carros, posicao) {
+function removeCarro(carros, indice) {
     const listaAtualizada = [];
   
     for (let i = 0; i < carros.length; i++) {
-      if (i !== posicao) {
+      if (i !== indice) {
         listaAtualizada.push(carros[i]);
       }
     }
   
     if (listaAtualizada.length === carros.length) {
-      return "Posição inválida.";
+      return "Indice inválido.";
     }
   
     return listaAtualizada;
