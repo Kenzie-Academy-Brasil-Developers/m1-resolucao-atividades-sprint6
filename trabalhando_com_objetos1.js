@@ -1,109 +1,104 @@
-// Resoluções aqui
+// --------- Primeira parte ------------
 
 // Exercício 1
-
 const pessoa = {
-    nome: '',
-    anoDeNascimento: '',
-    cpf: '',
-    cidade: '',
-    estado: '',
-    logradouro: ''
+  nome: '',
+  anoDeNascimento: '',
+  cpf: '',
+  cidade: '',
+  estado: '',
+  logradouro: ''
 }
 
 // Exercício 2
-
 const escola = {
-    nome: '',
-    cnpj: '',
-    areaDeAtuacao: '',
-    cidade: '',
-    estado: '',
-    logradouro: '',
-    curso: ''
+  nome: '',
+  cnpj: '',
+  areaDeAtuacao: '',
+  cidade: '',
+  estado: '',
+  logradouro: '',
+  curso: ''
 }
 
 // Exercício 3
-
 const curso = {
-    nome: '',
-    duracao: '',
-    turma: '',
-    modulos: ''
+  nome: '',
+  duracao: '',
+  turma: '',
+  modulos: ''
 }
 
 // Exercício 4
-
-const endereço = {
-    cidade: '',
-    estado: '',
-    logradouro: '',
-    cep: ''
+const endereco = {
+  cidade: '',
+  estado: '',
+  logradouro: '',
+  cep: ''
 }
 
-// -----------------------------
+// --------- Segunda parte ------------
 
-const figure = {  
-    name: "Carl",   
-    classes: ["Warrior", 'Barbarious'],  
-    leader_trend: true,
-    power: 6, 
-    allied: true  
+const carro = {  
+  placa: "ABC123",   
+  classes: ["Sedan"],  
+  luxo: true,
+  potencia: 200, 
+  estacionado: true  
 }
 
-function returnName(){
-    return figure.name
+function obterPlaca(){
+  return carro.placa;
 }
 
-returnName()
+obterPlaca();
 
-function verifyClasses(){
-    if (figure.classes.length == 1){
-        return figure.classes[0]
+function verificarClasses(){
+  if (carro.classes.length === 1){
+    return carro.classes[0];
+  } else {
+    return carro.classes;
+  }
+}
+
+verificarClasses();
+
+function potenciaReal(){
+  if (carro.luxo){
+    carro.potencia = carro.potencia ** 2;
+  } 
+  
+  return carro.potencia;
+}
+
+potenciaReal();
+
+function adicionarNovaClasse(novaClasse){
+  const classesPermitidas = ['sedan', 'hatchback', 'suv', 'crossover', 'cupê'];
+
+  if (carro.classes.length >= 3){
+    return 'Este carro não pode ter mais classes.';
+  } else {
+    if (classesPermitidas.includes(novaClasse.toLowerCase())){
+      if (carro.classes.includes(novaClasse.toLowerCase())){
+        return `O carro já possui a classe ${novaClasse}.`;
+      } else {
+        carro.classes.push(novaClasse.toLowerCase());
+        return `Classe ${novaClasse} adicionada com sucesso.`;
+      }
     } else {
-        return figure.classes
+      return 'Classe não permitida';
     }
+  }
 }
 
-verifyClasses()
+adicionarNovaClasse('cupê');
 
-function realPower(){
-    if (figure.leader_trend){
-        figure.power **= 2
-    } 
-    
-    return figure.power
-    
+function naoMaisLuxo(){
+  if (carro.estacionado && carro.classes.includes('Luxo')){
+    carro.luxo = false;
+    return `O carro ${carro.placa} não é mais considerado um carro de luxo.`;
+  }
 }
 
-realPower()
-
-function insertNewClass(newClass){
-    const validClasses = ['warrior', 'barbarious', 'arch', 'hunter', 'survivor']
-
-    if (figure.classes.length >= 3){
-        return 'Este personagem não pode estar em mais classes.'
-    } else {
-        if (validClasses.includes(newClass.toLowerCase())){
-            if (figure.classes.includes(newClass.toLowerCase())){
-                return `O personagem já pertence à classe ${newClass}.`
-            } else {
-                figure.classes.push(newClass.toLowerCase())
-                return `Classe ${newClass} inserida com sucesso.`
-            }
-        } else {
-            return 'Classe não permitida'
-        }
-    }
-}
-
-insertNewClass('warrior')
-
-function noMoreBarbarious(){
-    if (figure.allied && figure.classes.includes('Barbarious')){
-        figure.allied = false
-        return `O ${figure.name} agora é um inimigo.`
-    }
-}
-
-noMoreBarbarious()
+naoMaisLuxo();
