@@ -208,13 +208,13 @@ function contaCarrosNovos(carros){
 console.log(contaCarrosNovos(carros));
 
 //Exercício 9 - Quem são os donos ?
-function atualizaInformacaoCarros(carros, posicao, pessoa){
+function atualizaInformacaoCarros(carros, indice, pessoa){
 
     for (let i = 0; i < carros.length; i++) {
         carros[i].donos = {};
     }
 
-    carros[posicao].donos = pessoa;
+    carros[indice].donos = pessoa;
 
     return carros;
 }
