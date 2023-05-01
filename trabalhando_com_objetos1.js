@@ -41,7 +41,7 @@ const endereco = {
 
 const carro = {  
   placa: "ABC123",   
-  classes: ["Sedan"],  
+  classes: ["sedan"],  
   luxo: true,
   potencia: 200, 
   estacionado: true  
@@ -74,22 +74,20 @@ function potenciaReal(){
 potenciaReal();
 
 function adicionarNovaClasse(novaClasse){
-  const classesPermitidas = ['sedan', 'hatchback', 'suv', 'crossover', 'cupê'];
+    const classesPermitidas = ["sedan", "hatchback", "suv", "crossover", "cupê"];
 
-  if (carro.classes.length >= 3){
-    return 'Este carro não pode ter mais classes.';
-  } else {
-    if (classesPermitidas.includes(novaClasse.toLowerCase())){
-      if (carro.classes.includes(novaClasse.toLowerCase())){
-        return `O carro já possui a classe ${novaClasse}.`;
-      } else {
-        carro.classes.push(novaClasse.toLowerCase());
-        return `Classe ${novaClasse} adicionada com sucesso.`;
-      }
-    } else {
-      return 'Classe não permitida';
-    }
+  if (carro.classes.length >= 3) {
+    return "Este carro não pode ter mais classes.";
   }
+
+  if (classesPermitidas.includes(novaClasse.toLowerCase())) {
+    if (carro.classes.includes(novaClasse)) {
+      return `O carro já possui a classe ${novaClasse}.`;
+    }
+    carro.classes.push(novaClasse.toLowerCase());
+    return `Classe ${novaClasse} adicionada com sucesso.`;
+  }
+  return "Classe não permitida";
 }
 
 adicionarNovaClasse('cupê');
