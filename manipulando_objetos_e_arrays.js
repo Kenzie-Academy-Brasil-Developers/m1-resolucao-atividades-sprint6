@@ -2,7 +2,7 @@
 
 // Dados base para atividades
 
-let departmentList = [
+const departmentList = [
   {
     departmentName: "Financial",
     employees: [
