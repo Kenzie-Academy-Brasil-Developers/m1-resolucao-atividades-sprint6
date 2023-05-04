@@ -41,62 +41,66 @@ const endereco = {
 
 const carro = {  
   placa: "ABC123",   
-  classes: ["sedan"],  
+  classes: ["Luxo"],  
   luxo: true,
   potencia: 200, 
   estacionado: true  
 }
 
+
 function obterPlaca(){
-  return carro.placa;
+    return carro.placa;
 }
 
 obterPlaca();
 
 function verificarClasses(){
-  if (carro.classes.length === 1){
-    return carro.classes[0];
-  } else {
-    return carro.classes;
-  }
+    if (carro.classes.length === 1){
+        return carro.classes[0];
+    } else {
+        return carro.classes;
+    }
 }
 
 verificarClasses();
 
 function potenciaReal(){
-  if (carro.luxo){
-    carro.potencia = carro.potencia ** 2;
-  } 
-  
-  return carro.potencia;
+    if (carro.luxo){
+        carro.potencia = carro.potencia ** 2;
+    } 
+    
+    return carro.potencia;
 }
 
 potenciaReal();
 
 function adicionarNovaClasse(novaClasse){
     const classesPermitidas = ["sedan", "hatchback", "suv", "crossover", "cupê"];
-
-  if (carro.classes.length >= 3) {
-    return "Este carro não pode ter mais classes.";
-  }
-
-  if (classesPermitidas.includes(novaClasse.toLowerCase())) {
-    if (carro.classes.includes(novaClasse)) {
-      return `O carro já possui a classe ${novaClasse}.`;
+    
+    if (carro.classes.length >= 3) {
+        return "Este carro não pode ter mais classes.";
     }
-    carro.classes.push(novaClasse.toLowerCase());
-    return `Classe ${novaClasse} adicionada com sucesso.`;
-  }
-  return "Classe não permitida";
+    
+    if (classesPermitidas.includes(novaClasse.toLowerCase())) {
+        if (carro.classes.includes(novaClasse)) {
+            return `O carro já possui a classe ${novaClasse}.`;
+        }
+        carro.classes.push(novaClasse.toLowerCase());
+        return `Classe ${novaClasse} adicionada com sucesso.`;
+    }
+    return "Classe não permitida";
 }
 
 adicionarNovaClasse('cupê');
 
 function naoMaisLuxo(){
-  if (carro.estacionado && carro.classes.includes('Luxo')){
-    carro.luxo = false;
+    if (carro.estacionado === false){
+        return "Carro não está estacionado";
+    }else if(!carro.classes.includes('Luxo')){
+        return "A classe Luxo não está presente na lista de classes do carro";
+    }
+    
     return `O carro ${carro.placa} não é mais considerado um carro de luxo.`;
-  }
 }
 
 naoMaisLuxo();
