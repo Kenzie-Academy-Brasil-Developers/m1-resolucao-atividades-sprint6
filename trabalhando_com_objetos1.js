@@ -41,7 +41,7 @@ const endereco = {
 
 const carro = {  
   placa: "ABC123",   
-  classes: ["sedan"],  
+  classes: ["sedan", "luxo"],  
   luxo: true,
   potencia: 200, 
   estacionado: true  
@@ -93,7 +93,7 @@ function adicionarNovaClasse(novaClasse){
 adicionarNovaClasse('cupê');
 
 function naoMaisLuxo(){
-  if (carro.estacionado && carro.classes.includes('Luxo')){
+  if (carro.estacionado && carro.classes.includes('luxo')){
     carro.luxo = false;
     return `O carro ${carro.placa} não é mais considerado um carro de luxo.`;
   }
