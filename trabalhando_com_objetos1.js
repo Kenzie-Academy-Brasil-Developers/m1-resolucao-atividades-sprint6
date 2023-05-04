@@ -41,10 +41,10 @@ const endereco = {
 
 const carro = {  
   placa: "ABC123",   
-  classes: ["Luxo"],  
+  classes: ["sedan"],  
   luxo: true,
   potencia: 200, 
-  estacionado: true  
+  estacionado: true 
 }
 
 
@@ -95,11 +95,10 @@ adicionarNovaClasse('cupê');
 
 function naoMaisLuxo(){
     if (carro.estacionado === false){
-        return "Carro não está estacionado";
-    }else if(!carro.classes.includes('Luxo')){
-        return "A classe Luxo não está presente na lista de classes do carro";
+        return `O carro ${carro.placa} não está estacionado.`;
+    }else if(!carro.classes.includes('luxo')){
+        return `O carro ${carro.placa} não possui a classe 'Luxo' em sua lista de classes.`;
     }
-    
     return `O carro ${carro.placa} não é mais considerado um carro de luxo.`;
 }
 
