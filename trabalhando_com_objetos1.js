@@ -96,8 +96,8 @@ adicionarNovaClasse('cupê');
 function naoMaisLuxo(){
     if (!carro.estacionado){
         return `O carro ${carro.placa} não está estacionado.`;
-    }else if(!carro.classes.includes('luxo')){
-        return `O carro ${carro.placa} não possui a classe 'Luxo' em sua lista de classes.`;
+    }else if(!carro.luxo){
+        return `O carro ${carro.placa} não é luxuoso.`;
     }
     return `O carro ${carro.placa} não é mais considerado um carro de luxo.`;
 }
