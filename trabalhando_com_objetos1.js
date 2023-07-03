@@ -52,7 +52,8 @@ function obterPlaca(){
     return carro.placa;
 }
 
-obterPlaca();
+const resultado1 = obterPlaca();
+console.log(resultado1);
 
 function verificarClasses(){
     if (carro.classes.length === 1){
@@ -62,7 +63,8 @@ function verificarClasses(){
     }
 }
 
-verificarClasses();
+const resultado2 =  verificarClasses();
+console.log(resultado2);
 
 function potenciaReal(){
     if (carro.luxo){
@@ -72,7 +74,8 @@ function potenciaReal(){
     return carro.potencia;
 }
 
-potenciaReal();
+const resultado3 =  potenciaReal();
+console.log(resultado3);
 
 function adicionarNovaClasse(novaClasse){
     const classesPermitidas = ["sedan", "hatchback", "suv", "crossover", "cupê"];
@@ -91,7 +94,8 @@ function adicionarNovaClasse(novaClasse){
     return "Classe não permitida";
 }
 
-adicionarNovaClasse('cupê');
+const resultado4 = adicionarNovaClasse('cupê');
+console.log(resultado4);
 
 function naoMaisLuxo(){
     if (!carro.estacionado){
@@ -102,4 +106,5 @@ function naoMaisLuxo(){
     return `O carro ${carro.placa} não é mais considerado um carro de luxo.`;
 }
 
-naoMaisLuxo();
+const resultado5 = naoMaisLuxo();
+console.log(resultado5);
