@@ -103,6 +103,7 @@ function naoMaisLuxo(){
     }else if(!carro.luxo){
         return `O carro ${carro.placa} não é luxuoso.`;
     }
+    carro.luxo = false;
     return `O carro ${carro.placa} não é mais considerado um carro de luxo.`;
 }
 
