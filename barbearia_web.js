@@ -32,7 +32,7 @@ const barbearia = {
   }
   
   function buscaBarbaPorId(id) {
-      for (let i = 0; i < barbearia.cortes.length; i++){ // percorrendo o array de 'barbas', que é uma propriedade do objeto 'barbearia'
+      for (let i = 0; i < barbearia.barbas.length; i++){ // percorrendo o array de 'barbas', que é uma propriedade do objeto 'barbearia'
           if (barbearia.barbas[i].id == id){ // verificando se o id da barba é igual ao id recebido por parâmetro
               return barbearia.barbas[i] // retornando o objeto 'barba' do array de barbas
             }
