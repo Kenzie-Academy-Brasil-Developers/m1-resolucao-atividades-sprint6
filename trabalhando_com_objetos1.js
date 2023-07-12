@@ -91,7 +91,7 @@ function adicionarNovaClasse(novaClasse){
         carro.classes.push(novaClasse.toLowerCase());
         return `Classe ${novaClasse} adicionada com sucesso.`;
     }
-    return "Classe não permitida";
+    return "Classe inválida. As classes permitidas são: sedan, hatchback, suv, crossover e cupê";
 }
 
 const resultado4 = adicionarNovaClasse('cupê');
